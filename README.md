@@ -24,6 +24,10 @@ if (2 = 3) {
 
 And you should see an underline on the if statement. Please note that there will be multiple information blocks, one is something I used for debugging (0 2 10 3, you might see something like this). Please see the comments in `src/extension.ts` file for an explanation.
 
+## Note
+
+If you see an error similar to this: https://github.com/microsoft/vscode/issues/102180 please run `npm run compile` before trying to run the extension by pressing ctrl + F5 or F5.
+
 ## Credits
 
 This code is mostly from [here](https://github.com/hchiam/custom-vscode-linter), and I’m working on this further to write an extension for LPython.

@@ -1,33 +1,42 @@
+## About the Project
 
-1. Setup the environment: (Mac: https://changelog.com/posts/install-node-js-with-homebrew-on-os-x and for Linux, see below):
+This project is a prototype for:
+
+1. A language server written in Python which generates a sample meta data (please see the list below), and transfers it to the received jsonrpc client. The message is returned as a dictionary. The following details are expected to be returned from our linter, but for now they have been hard coded.
+  a. Starting index (character): start_index (Number).
+  b. Ending index (character): end_index (Number).
+  c. Hover message: hover_message (string).
+
+2. The jsonrpc code is taken from fortls repository (https://github.com/gnikit/fortls/blob/master/fortls/jsonrpc.py)
+3. A sample VSCode Extension for the linter, which calls the language server when the document is saved and when the document is a python file. It then received the metadata and draws it on the active editor (if any) with a wavy underline.
+
+The objectives for this stage were to write a sample language server, and understand how to communicate between the server and the extension.
+
+## How to Install?
+
+Please follow the commands below:
 
 ```bash
-sudo apt install nodejs npm
+# First install the LPython Language Server
+git clone <server_repo> && cd <server_repo> && python3 setup.py install
+
+# Install the linter
+git clone https://github.com/ankitaS11/custom-vscode-linter
+cd custom-vscode-linter
+npm install && npm run compile
 ```
 
-2. Clone the repo: `git clone <repo_link>`.
-3. Install the dependencies, please make sure that you are in the folder:
+## Usage
 
-```bash
-npm install
-```
+Once installation is done, enter the `custom-vscode-linter` folder, open VSCode and open the `extension.ts` file in the `src` folder. Now launch the extension using ctrl + F5 (select VSCode Extension Development if a dropdown appears).
 
-If there is an error regarding the VSCode dependency error, please ensure that you have the latest version of VSCode installed (1.66.2).
-4. Once done with step-3, in the VSCode window, open `src/extension.ts` file and press ctrl + F5 (run without debugging), and it will show you an option - select VSCode development option (something similar to this).
-5. A new window will appear, please write a sample code, currently it only checks if assign is used instead of “==” and “===” in an if statement, so something like:
-
-```javascript
-if (2 = 3) {
-
-}
-```
-
-And you should see an underline on the if statement. Please note that there will be multiple information blocks, one is something I used for debugging (0 2 10 3, you might see something like this). Please see the comments in `src/extension.ts` file for an explanation.
-
-## Note
-
-If you see an error similar to this: https://github.com/microsoft/vscode/issues/102180 please run `npm run compile` before trying to run the extension by pressing ctrl + F5 or F5.
+Now create a new “python” file, just make sure it has more than 24 characters (as the metadata is hardcoded, so the line will be drawn from the 14th to 24th character). Save the file, and you’ll see the magic! :)
 
 ## Credits
 
-This code is mostly from [here](https://github.com/hchiam/custom-vscode-linter), and I’m working on this further to write an extension for LPython.
+This extension is WIP, but I would like to take this opportunity to thank a few people.
+
+Thanks to Ondrej Certik for guiding throughout this project. As my manager, as well as a guide, he has been very kind and helpful.
+
+Thanks to the creators of [custom-vscode-linter](https://github.com/hchiam/custom-vscode-linter) and [fortls](https://github.com/gnikit/fortls/tree/master/fortls) for open sourcing their code, as well as great instructions! I’ve learnt a lot from their codes, so thank you both!
+

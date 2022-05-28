@@ -1,24 +1,18 @@
-## About the Project
+## Key Fetures:
 
-This project is a prototype for:
+1. Draws underline.
+ ![image](https://user-images.githubusercontent.com/68434944/170823254-8e391875-8325-45e4-95d2-58d9fd48b88b.png)
+ 
+2. Symbol Lookup
+  ![image](https://user-images.githubusercontent.com/68434944/170823314-590190b2-842c-4bf9-8999-829458a4977f.png)
 
-1. A language server written in Python which generates a sample meta data (please see the list below), and transfers it to the received jsonrpc client. The message is returned as a dictionary. The following details are expected to be returned from our linter, but for now they have been hard coded.
-  a. Starting index (character): start_index (Number).
-  b. Ending index (character): end_index (Number).
-  c. Hover message: hover_message (string).
-
-2. The jsonrpc code is taken from fortls repository (https://github.com/gnikit/fortls/blob/master/fortls/jsonrpc.py)
-3. A sample VSCode Extension for the linter, which calls the language server when the document is saved and when the document is a python file. It then received the metadata and draws it on the active editor (if any) with a wavy underline.
-
-The objectives for this stage were to write a sample language server, and understand how to communicate between the server and the extension.
-
-## How to Install?
+## Installation:
 
 Please follow the commands below:
 
 ```bash
 # First install the LPython Language Server
-git clone <server_repo> && cd <server_repo> && python3 setup.py install
+git clone https://github.com/ankitaS11/LanguageServer && cd LanguageServer && python3 setup.py install
 
 # Install the linter
 git clone https://github.com/ankitaS11/custom-vscode-linter

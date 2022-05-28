@@ -14,7 +14,7 @@ Please follow the commands below:
 # First install the LPython Language Server
 git clone https://github.com/ankitaS11/LanguageServer && cd LanguageServer && python3 setup.py install
 
-# Install the linter
+# Install the extension
 git clone https://github.com/ankitaS11/custom-vscode-linter
 cd custom-vscode-linter
 npm install && npm run compile

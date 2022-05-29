@@ -8,7 +8,7 @@
   
 ## Language Server Integration
 
-The language server `[lpyth](https://github.com/ankitaS11/LanguageServer)` is responsible for providing the functionalities. 
+The language server [lpyth](https://github.com/ankitaS11/LanguageServer) is responsible for providing the functionalities. 
 
 
 ## Installation:

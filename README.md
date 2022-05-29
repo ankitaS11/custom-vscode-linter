@@ -5,6 +5,11 @@
  
 2. Symbol Lookup
   ![image](https://user-images.githubusercontent.com/68434944/170823314-590190b2-842c-4bf9-8999-829458a4977f.png)
+  
+## Language Server Integration
+
+The language server `[lpyth](https://github.com/ankitaS11/LanguageServer)` is responsible for providing the functionalities. 
+
 
 ## Installation:
 

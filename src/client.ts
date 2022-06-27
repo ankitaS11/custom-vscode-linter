@@ -3,7 +3,7 @@
 import { LanguageClient, LanguageClientOptions, ServerOptions } from 'vscode-languageclient/node'
 import * as path from 'path';
 import * as vscode from 'vscode';
-import { commands, window, workspace, TextDocument } from 'vscode';
+import { workspace, TextDocument } from 'vscode';
 import { LoggingService } from './logging-service';
 import { RestartLS } from './commands';
 
@@ -49,7 +49,7 @@ export const clients: Map<string, LanguageClient> = new Map();
         // You cannot pass a uri object 
       document.uri.toString()
     ];
-    const executablePath = "lpyth";
+    const executablePath = "/home/ankita/Documents/Internships/GSI/lpython/src/libasr/lsp/lsp_bin";
 
     const serverOptions: ServerOptions = {
       command: executablePath,
@@ -65,7 +65,7 @@ export const clients: Map<string, LanguageClient> = new Map();
     };
 
     this.client = new LanguageClient(
-      "lpyth", this.name, serverOptions, clientOptions
+      executablePath, this.name, serverOptions, clientOptions
     );
     this.client.start();
     clients.set(fileRoot, this.client);

@@ -47,9 +47,11 @@ export const clients: Map<string, LanguageClient> = new Map();
   ): Promise<void> {
     const args = [
         // You cannot pass a uri object 
+      "lsp",
       document.uri.toString()
     ];
-    const executablePath = "/home/ankita/Documents/Internships/GSI/lpython/src/libasr/lsp/lsp_bin";
+    const executablePath = "/home/ankita/Documents/Internships/GSI/lpython/src/bin/lpython";
+    // const executablePath = "lpythcpp";
 
     const serverOptions: ServerOptions = {
       command: executablePath,

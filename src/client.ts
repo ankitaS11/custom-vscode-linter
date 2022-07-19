@@ -60,6 +60,9 @@ export const clients: Map<string, LanguageClient> = new Map();
 
     // Assuming we are in a standalone file...
     const fileRoot: string = path.dirname(document.uri.fsPath);
+    
+    // If already registered then return
+    if (clients.has(fileRoot)) return;
  
     const clientOptions: LanguageClientOptions = {
       documentSelector: [{ scheme: 'file', language: 'LPython' }],
